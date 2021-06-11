@@ -17,25 +17,29 @@ class QuizTableViewCell: UITableViewCell {
     
     @IBAction func typedOnCheckBox(_ sender: UIButton) {
         
-        for i in 0 ..< checkBoxs.count {
-            if checkBoxs[i] == sender {
+        for item in checkBoxs {
+            let i = item.tag
+            if item == sender {
                 
-                checkBoxs[i].imageView?.largeContentImage = .checkmark
-                checkBoxs[i].setImage(UIImage(systemName: "circle.fill"), for: .normal)
+                item.imageView?.largeContentImage = .checkmark
+                item.setImage(UIImage(systemName: "circle.fill"), for: .normal)
+                item.isEnabled = false
+                print(i)
                 closureForSendData(i)
                 
             } else {
-                checkBoxs[i].isEnabled = false
+                item.isEnabled = false
             }
         }
         
-        
     }
+    
     override func prepareForReuse() {
         checkBoxs.forEach {
             $0.isEnabled = true
             let imageCircle = UIImage(systemName: "circle")
             $0.setImage(imageCircle, for: .normal)
+            $0.tintColor = .link
         }
     }
     

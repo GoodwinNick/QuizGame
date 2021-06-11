@@ -8,11 +8,13 @@
 import UIKit
 
 class ResultsViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    
     var delegate: TransferedProtocol!
     
-   
+    
     private var questions: [Question]?
     private var userAnswers: [Int]?
     
@@ -23,6 +25,7 @@ class ResultsViewController: UIViewController {
         questions = delegate.getData().questions
         userAnswers = delegate.getData().userAnswers
         tableView.register(UINib(nibName: "QuizTableViewCell", bundle: nil), forCellReuseIdentifier: "quizCell")
+        
     }
     
     @IBAction func newGameStart(_ sender: Any) {
@@ -46,31 +49,38 @@ extension ResultsViewController: UITableViewDataSource {
         guard let currentQuestion = questions?[indexPath.row] else {
             return UITableViewCell()
         }
-        print(indexPath.row)
+
         let arrayOfAnswers = Array(currentQuestion.answers.values)
         let arrayOfKeys = Array(currentQuestion.answers.keys)
         
         cell.questionLabel.text = currentQuestion.question
         
-        for i in 0 ..< cell.answers.count {
-            cell.answers[i].text = arrayOfAnswers[i]
+        
+        for item in cell.answers {
+            let i = item.tag
+            item.text = arrayOfAnswers[i]
         }
         
-        for i in 0 ..< cell.checkBoxs.count {
+        
+        for item in cell.checkBoxs {
+            let i = item.tag
+            
             if arrayOfKeys[i] == "correct" {
-                cell.checkBoxs[i].tintColor = .green
+                item.tintColor = .green
             }
             
             if i == (userAnswers?[indexPath.row])! {
                 let image = UIImage(systemName: "circle.fill")
-                cell.checkBoxs[i].setImage(image, for: .normal)
-                if cell.checkBoxs[i].tintColor != .green {
-                    cell.checkBoxs[i].tintColor = .red
+                item.setImage(image, for: .normal)
+                
+                if item.tintColor != .green {
+                    item.tintColor = .red
                 }
                 
             }
-            cell.checkBoxs[i].isEnabled = false
+            item.isEnabled = false
         }
+      
         return cell
     }
     
