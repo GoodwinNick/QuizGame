@@ -22,7 +22,6 @@ class QuizTableViewCell: UITableViewCell {
                 
                 checkBoxs[i].imageView?.largeContentImage = .checkmark
                 checkBoxs[i].setImage(UIImage(systemName: "circle.fill"), for: .normal)
-                print(i)
                 closureForSendData(i)
                 
             } else {

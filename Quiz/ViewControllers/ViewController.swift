@@ -150,7 +150,6 @@ extension ViewController: UITableViewDataSource {
         
         cell.closureForSendData = { num in
             self.userAnswers?[indexPath.row] = num
-            print(num)
         }
         
         return cell

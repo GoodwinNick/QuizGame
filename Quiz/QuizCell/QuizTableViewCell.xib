@@ -128,14 +128,14 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="questionLabel" destination="Hgv-DG-pp4" id="PRG-oM-5WJ"/>
-                <outletCollection property="answers" destination="6HV-hS-dbZ" collectionClass="NSMutableArray" id="hWT-et-kzg"/>
-                <outletCollection property="answers" destination="SNY-GB-T63" collectionClass="NSMutableArray" id="yFm-81-obe"/>
-                <outletCollection property="answers" destination="92e-bb-G7u" collectionClass="NSMutableArray" id="Y7A-rI-m9X"/>
-                <outletCollection property="answers" destination="CJS-2q-DbK" collectionClass="NSMutableArray" id="HCE-2U-MPJ"/>
-                <outletCollection property="checkBoxs" destination="aAW-zR-uRR" collectionClass="NSMutableArray" id="LvX-dR-dc6"/>
-                <outletCollection property="checkBoxs" destination="76e-KH-gJu" collectionClass="NSMutableArray" id="PIL-BT-f3V"/>
-                <outletCollection property="checkBoxs" destination="IQ1-p6-FbJ" collectionClass="NSMutableArray" id="e0i-wl-Dqf"/>
-                <outletCollection property="checkBoxs" destination="Ixa-bM-8RK" collectionClass="NSMutableArray" id="IQe-w8-QI0"/>
+                <outletCollection property="answers" destination="6HV-hS-dbZ" collectionClass="NSMutableArray" id="l3H-WB-NKa"/>
+                <outletCollection property="answers" destination="SNY-GB-T63" collectionClass="NSMutableArray" id="YAk-xF-7We"/>
+                <outletCollection property="answers" destination="92e-bb-G7u" collectionClass="NSMutableArray" id="Err-jW-B9h"/>
+                <outletCollection property="answers" destination="CJS-2q-DbK" collectionClass="NSMutableArray" id="A4t-5Q-AVb"/>
+                <outletCollection property="checkBoxs" destination="aAW-zR-uRR" collectionClass="NSMutableArray" id="B2V-I5-NOj"/>
+                <outletCollection property="checkBoxs" destination="76e-KH-gJu" collectionClass="NSMutableArray" id="4gW-I2-BW0"/>
+                <outletCollection property="checkBoxs" destination="IQ1-p6-FbJ" collectionClass="NSMutableArray" id="tU9-fa-DoH"/>
+                <outletCollection property="checkBoxs" destination="Ixa-bM-8RK" collectionClass="NSMutableArray" id="3zm-h3-86L"/>
             </connections>
             <point key="canvasLocation" x="18.840579710144929" y="166.07142857142856"/>
         </tableViewCell>

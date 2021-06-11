@@ -38,6 +38,7 @@ extension ResultsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "quizCell", for: indexPath) as? QuizTableViewCell else {
             return UITableViewCell()
         }
@@ -45,7 +46,7 @@ extension ResultsViewController: UITableViewDataSource {
         guard let currentQuestion = questions?[indexPath.row] else {
             return UITableViewCell()
         }
-        
+        print(indexPath.row)
         let arrayOfAnswers = Array(currentQuestion.answers.values)
         let arrayOfKeys = Array(currentQuestion.answers.keys)
         
@@ -55,22 +56,21 @@ extension ResultsViewController: UITableViewDataSource {
             cell.answers[i].text = arrayOfAnswers[i]
         }
         
-            for i in 0 ..< cell.checkBoxs.count {
-                if arrayOfKeys[i] == "correct" {
-                    cell.checkBoxs[i].tintColor = .green
+        for i in 0 ..< cell.checkBoxs.count {
+            if arrayOfKeys[i] == "correct" {
+                cell.checkBoxs[i].tintColor = .green
+            }
+            
+            if i == (userAnswers?[indexPath.row])! {
+                let image = UIImage(systemName: "circle.fill")
+                cell.checkBoxs[i].setImage(image, for: .normal)
+                if cell.checkBoxs[i].tintColor != .green {
+                    cell.checkBoxs[i].tintColor = .red
                 }
                 
-                if i == (userAnswers?[indexPath.row])! {
-                    let image = UIImage(systemName: "circle.fill")
-                    cell.checkBoxs[i].setImage(image, for: .normal)
-                    if cell.checkBoxs[i].tintColor != .green {
-                        cell.checkBoxs[i].tintColor = .red
-                    }
-                    
-                }
-                cell.checkBoxs[i].isEnabled = false
             }
-        
+            cell.checkBoxs[i].isEnabled = false
+        }
         return cell
     }
     
