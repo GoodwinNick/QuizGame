@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SyT-Bj-079">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="5El-cv-Vay">
+            <objects>
+                <navigationController id="SyT-Bj-079" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VXk-5w-sk2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Y3g-ms-Z91" kind="relationship" relationship="rootViewController" id="Gga-6i-sxJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x2u-Og-NJn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-291" y="-121"/>
+        </scene>
+        <!--Quiz game-->
+        <scene sceneID="44J-j3-1dW">
+            <objects>
+                <viewController id="Y3g-ms-Z91" customClass="ViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iYo-XG-5iJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZxJ-dx-n0E">
+                                <rect key="frame" x="0.0" y="88" width="414" height="738"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="quizCell" id="MlC-xg-PIf" customClass="QuizTableViewCell" customModule="Quiz" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MlC-xg-PIf" id="5mN-9z-hEZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqf-cc-6fs">
+                                <rect key="frame" x="0.0" y="826" width="414" height="70"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="sj3-gR-x2D"/>
+                                </constraints>
+                                <state key="normal" title="Submit all answers">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2DU-Af-AQ8" kind="show" id="3dG-zY-uOW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nsv-Ec-dYU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pqf-cc-6fs" firstAttribute="trailing" secondItem="Nsv-Ec-dYU" secondAttribute="trailing" id="2Ih-5k-NeQ"/>
+                            <constraint firstItem="Nsv-Ec-dYU" firstAttribute="trailing" secondItem="ZxJ-dx-n0E" secondAttribute="trailing" id="2fU-dy-UOC"/>
+                            <constraint firstItem="pqf-cc-6fs" firstAttribute="top" secondItem="ZxJ-dx-n0E" secondAttribute="bottom" id="Gy9-RI-SJI"/>
+                            <constraint firstItem="ZxJ-dx-n0E" firstAttribute="top" secondItem="iYo-XG-5iJ" secondAttribute="topMargin" id="e5R-Zr-gS1"/>
+                            <constraint firstAttribute="bottom" secondItem="pqf-cc-6fs" secondAttribute="bottom" id="eVk-FO-3aR"/>
+                            <constraint firstItem="pqf-cc-6fs" firstAttribute="leading" secondItem="Nsv-Ec-dYU" secondAttribute="leading" id="xCV-uJ-wtb"/>
+                            <constraint firstItem="ZxJ-dx-n0E" firstAttribute="leading" secondItem="Nsv-Ec-dYU" secondAttribute="leading" id="xRv-sd-SFw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Quiz game" id="nEC-bj-1cD"/>
+                    <connections>
+                        <outlet property="tableView" destination="ZxJ-dx-n0E" id="Eid-Ut-zF6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gyg-Yp-yLr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="663.768115942029" y="-112.5"/>
+        </scene>
+        <!--Result-->
+        <scene sceneID="VAn-0f-nEp">
+            <objects>
+                <viewController id="2DU-Af-AQ8" customClass="ResultsViewController" customModule="Quiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="txe-UL-3EV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QX3-cQ-0Gw">
+                                <rect key="frame" x="0.0" y="88" width="414" height="738"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="quizCell" id="W7o-3U-dXr">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W7o-3U-dXr" id="yDe-IA-Nf0">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPL-48-siH">
+                                <rect key="frame" x="0.0" y="826" width="414" height="70"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="klI-DU-e9n"/>
+                                </constraints>
+                                <state key="normal" title="New game">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="newGameStart:" destination="2DU-Af-AQ8" eventType="touchUpInside" id="QGi-Y9-KiH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GOo-CX-4pw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GOo-CX-4pw" firstAttribute="trailing" secondItem="QX3-cQ-0Gw" secondAttribute="trailing" id="4hK-Zc-nIU"/>
+                            <constraint firstItem="vPL-48-siH" firstAttribute="leading" secondItem="GOo-CX-4pw" secondAttribute="leading" id="Med-De-2X8"/>
+                            <constraint firstItem="vPL-48-siH" firstAttribute="top" secondItem="QX3-cQ-0Gw" secondAttribute="bottom" id="NwE-Zr-H88"/>
+                            <constraint firstAttribute="bottom" secondItem="vPL-48-siH" secondAttribute="bottom" id="ORp-4k-F56"/>
+                            <constraint firstItem="GOo-CX-4pw" firstAttribute="trailing" secondItem="vPL-48-siH" secondAttribute="trailing" id="SAR-6U-T1w"/>
+                            <constraint firstItem="QX3-cQ-0Gw" firstAttribute="top" secondItem="GOo-CX-4pw" secondAttribute="top" id="gC4-Dl-DD2"/>
+                            <constraint firstItem="QX3-cQ-0Gw" firstAttribute="leading" secondItem="GOo-CX-4pw" secondAttribute="leading" id="kyi-pT-S5a"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Result" id="zxV-rC-0E9">
+                        <barButtonItem key="backBarButtonItem" title=" " id="oY7-nq-Bnc"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="QX3-cQ-0Gw" id="f2b-kD-1PG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pdg-rt-gTT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1709" y="-113"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
